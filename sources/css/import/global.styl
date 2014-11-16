@@ -1,0 +1,256 @@
+/*!
+ * Примеси
+ */
+@import "nib"
+
+@font-face
+	font-family 'CoHeadline'
+	src url("/fonts/CoHeadline.ttf")
+	font-weight normal
+
+@font-face
+	font-family 'Regal'
+	src url("/fonts/Regal.otf")
+	font-weight normal
+
+
+blue = #4057ac
+gray = #f6f6f4
+
+full-width()
+	float left
+	width 100%
+
+vcenter()
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
+
+middle()
+	display inline-block
+	vertical-align middle
+
+t(attr=null,time=.3s)
+	transition-property attr
+	transition-duration time
+
+b(name=null, position=null, color=null, size=null)
+	background color url(/images/name) position
+	if size
+		background-size size
+
+border-dashed(color=rgba(0,0,0,1), top=20px, size=12px)
+	background-image: linear-gradient(left, color 70%, transparent 70%)
+	background-repeat: repeat-x;
+	background-size: size 1px;
+	background-position: 0 top;
+
+border-line(color=rgba(0,0,0,1), top=calc(100% - 1px), size=12px)
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, color 50%);
+	background-repeat: repeat-x;
+	background-size: 2px 2px;
+	background-position: 0 top;
+
+
+body
+	background gray
+	font-family: 'Regal', serif;
+	margin 0
+	font-size 18px
+	padding-top 65px
+
+.login
+	vcenter()
+	background white
+	box-shadow: 2px 2px 0 0 rgba(0,0,0,.07);
+	width 400px
+	margin 0 auto
+	padding 20px 20px 30px
+	text-align: center
+	&__title
+		font-family 'CoHeadline'
+		font-size 22px
+		margin-bottom 25px
+	#login-buttons-facebook
+		background #304a7f
+	#login-buttons-twitter
+		background #1eb3e9
+	#login-buttons-vk
+		background #426489
+	.login-text-and-button
+		cursor pointer
+		border-radius 3px
+		width 30%
+		display inline-block
+		font-family 'CirceWeb-Bold'
+		font-size 16px
+		color white
+		margin 0 auto
+		line-height 35px
+		margin 2px 0
+		background blue
+		
+.course-title
+	full-width()
+	margin-top -25px
+	min-height 300px
+	margin-bottom 30px
+	position relative
+	b('bg.jpg', center -80px, gray, cover)
+	&__content
+		vcenter()
+		text-align: center
+	&__big
+		font-size 70px
+		font-family 'CoHeadline'
+		line-height 55px
+	&__small
+		font-family 'CirceWeb-Regular'
+		letter-spacing 5px
+		text-transform: uppercase
+		margin-bottom 15px
+		font-size 14px
+		opacity .5
+
+.days
+	background white
+	padding 50px 0
+	.container
+		max-width 700px
+	&__item
+		full-width()
+		margin 20px 0 25px
+		padding-bottom 40px
+		border-bottom 1px solid alpha(black,.09)
+		&:last-of-type
+			border-bottom 0
+	&__name
+		font-size 26px
+		line-height 26px
+		margin-bottom 5px
+		font-family 'CirceWeb-Bold'
+		a
+			color blue
+			text-decoration none
+			&:hover
+				border-line(alpha(blue,.3), 25px)
+	&__date
+		font-family 'CirceWeb-Bold'
+		text-transform: uppercase
+		font-size 10px
+		opacity .5
+		margin-bottom 3px
+		letter-spacing 1px
+	&__description
+		opacity .9
+		font-size 17px
+		line-height 19px
+	&__icon
+		text-align: center
+		margin-top 5px
+		full-width()
+		svg
+			display inline-block
+			max-width 60px
+			max-height 60px
+	
+.left
+	text-align: left
+
+.right
+	text-align: right
+
+.day
+	&__title
+		full-width()
+		margin-top -20px
+		min-height 200px
+		margin-bottom 30px
+		position relative
+		b('bg.jpg', center -80px, gray, cover)
+		&-text
+			vcenter()
+			z-index 30
+			color white
+			text-align: center
+		&-big
+			font-size 55px
+			font-family 'CirceWeb-Bold'
+	&__frame
+		position absolute
+		top 0
+		left 0
+		width 100%
+		min-height 100%
+		opacity .8
+	&__content
+		background white
+		p
+			margin-bottom 20px
+		iframe
+			margin 20px 0
+		h1
+			margin-bottom 20px
+		video
+			width 100%
+			height 642px
+		.table
+			&.big
+				width 100%
+				td
+					
+					border 1px solid #dddddd
+					width 20%
+					height 150px
+					padding 0 20px
+					font-family 'CirceWeb-Light'
+					font-size 25px
+					line-height 25px
+					text-align: center
+		.nav-tabs
+			li
+				font-size 16px
+				&:not(.active)
+					a
+						color blue
+		.tab-pane
+			padding 30px 0
+			h2
+				margin-top 0
+				margin-bottom 20px
+			.row+.row
+				margin-top 10px
+	.container
+		max-width 883px
+		img
+			max-width 100%
+	.task
+		background gray
+		padding 40px 0
+		margin 20px 0 40px
+		.row+.row
+			margin-top 20px
+		h3
+			margin-top 0
+			margin-bottom 20px
+		textarea
+			full-width()
+			border 0
+			resize none
+			box-shadow: inset -2px -2px 0 0 rgba(0,0,0,.07);
+			padding 20px
+			min-height 200px
+			&:focus
+				outline 0
+
+
+
+
+
+
+
+
+
+
+

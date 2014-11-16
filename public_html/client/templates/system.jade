@@ -1,0 +1,27 @@
+template(name="login")
+	.container
+		.login
+			.login__title Вход для учеников
+			+loginButtons
+
+template(name="singup")
+	.container
+		.login
+			.login__title Регистрация
+			if invitationId
+				+loginButtons
+			else
+				p Код приглашения не найден
+
+template(name="notFound")
+	.container
+		.login
+			.login__title Страница не найдена
+			p Страница недоступна.<br>
+				a(href="/") Перейти на главную
+
+template(name="errorSignup")
+	.container
+		.login
+			.login__title Ошибка входа
+			p Вероятно Вы не приглашены <br>ни на один из наших курсов.

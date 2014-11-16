@@ -1,0 +1,20 @@
+head
+	title Школа «Стильно Модно Молодежно»
+	link(href="http://fnt.webink.com/wfs/webink.css/?project=580C47D0-FAA1-48D1-B377-344FDC5DE5A3&amp;fonts=5D3863ED-56C0-05C2-6E9D-B78930F6FC51:f=CirceWeb-Regular,E2760A8D-7C6C-F53E-5395-BE9CDB1B4178:f=CirceWeb-Light,227F9941-44EA-CCB4-933C-BE44A0BEC7FA:f=CirceWeb-ExtraBold,A6D35641-6598-78D4-C742-D050FEFAC82C:f=CirceWeb-Bold", rel="stylesheet")
+	link(href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic&subset=latin-ext', rel='stylesheet', type='text/css')
+body
+	+header
+	.container
+		
+
+template(name="header")
+	.toolbar
+		.container
+			if currentUser
+				.row
+					.col-xs-8.left
+						a.toolbar__title(href="/") Стильно-Модно-Молодежно 
+					.col-xs-4.right
+						+loginButtons
+			else
+				a.toolbar__title(href="/") Стильно-Модно-Молодежно 

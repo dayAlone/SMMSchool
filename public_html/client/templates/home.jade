@@ -1,0 +1,45 @@
+template(name="home")
+	.course-title
+		.course-title__content
+			.course-title__small Разбор гардероба
+			.course-title__big Соберитесь<br> тряпки
+	.days
+		.container
+			each daysList
+				+dayItem
+
+template(name="dayItem")
+	.days__item(data-id="{{sort}}")
+		.row
+			.col-xs-2
+				if isActive
+					a(href="/days/{{sort}}").days__icon 
+						svg(role="img", class="p-{{sort}}")
+							use(xlink:href="/images/svg/svg-symbols.svg#p-{{sort}}", style="stroke:{{color}}")
+				else
+					.days__icon 
+						svg(role="img", class="p-{{sort}}")
+							use(xlink:href="/images/svg/svg-symbols.svg#p-{{sort}}", style="stroke:{{color}}")
+			.col-xs-8
+				.days__date {{date}}
+				if isActive
+					.days__name 
+						a(href="/days/{{sort}}") {{name}}
+				else
+					.days__name {{name}}
+				.days__description {{description}}
+
+template(name="dayDetail")
+	if Day
+		.day(data-id="#{Day._id}")
+			.day__title
+				.day__frame(style="background:#{Day.color}")
+				.day__title-text
+					.day__title-big #{Day.name}
+					.day__title-small  #{Day.description}
+			.day__content
+				+Template.dynamic(template=templateName data=answerList)
+
+
+	else
+		+notFound
