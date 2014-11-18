@@ -22,7 +22,7 @@ imageop      = require 'gulp-image-optimization'
 svgSymbols   = require 'gulp-svg-symbols'
 
 
-plugins  = [ 'jquery', 'bootstrap', 'bem', 'hoverIntent', 'spin', 'velocity' ]
+plugins  = [ 'jquery', 'bootstrap', 'bem', 'hoverIntent', 'spin', 'velocity', 'table', 'table2json' ]
 
 layout   = './public_html/client'
 sources  = './sources/'
@@ -42,7 +42,7 @@ loadPlugins = (x, y)->
 		css   : []
 		js    : []
 		files : []
-	
+		
 	bower   = './bower_components'
 	plugins = require('./plugins.json')
 	for i in x

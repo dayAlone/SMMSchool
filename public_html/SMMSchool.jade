@@ -5,7 +5,6 @@ head
 body
 	+header
 	.container
-		
 
 template(name="header")
 	.toolbar
@@ -18,3 +17,8 @@ template(name="header")
 						+loginButtons
 			else
 				a.toolbar__title(href="/") Стильно-Модно-Молодежно 
+
+template(name="footer")
+	.footer 
+		span &copy;
+		| 2014 Школа «Стильно-Модно-Молодежно»

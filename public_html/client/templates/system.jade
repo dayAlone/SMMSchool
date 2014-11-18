@@ -7,11 +7,14 @@ template(name="login")
 template(name="singup")
 	.container
 		.login
-			.login__title Регистрация
-			if invitationId
-				+loginButtons
+			if Loaded
+				.login__title Регистрация
+				if invitationId
+					+loginButtons
+				else
+					p Код приглашения не найден
 			else
-				p Код приглашения не найден
+				+spinner
 
 template(name="notFound")
 	.container

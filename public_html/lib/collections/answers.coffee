@@ -11,12 +11,12 @@ Meteor.methods
 
 		answer = Answers.findOne
 			userId : user
-			dayID  : day._id
+			dayId  : day._id
 
 		if !answer
 			answer = 
 				userId : user
-				dayID  : day._id
+				dayId  : day._id
 				data   : data.answers
 
 			answer._id = Answers.insert answer

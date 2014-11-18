@@ -7,6 +7,7 @@ template(name="home")
 		.container
 			each daysList
 				+dayItem
+	+footer
 
 template(name="dayItem")
 	.days__item(data-id="{{sort}}")
@@ -28,18 +29,74 @@ template(name="dayItem")
 				else
 					.days__name {{name}}
 				.days__description {{description}}
+				if isAnswer
+					.badge.badge--answer Есть ответ преподавателя
 
 template(name="dayDetail")
 	if Day
-		.day(data-id="#{Day._id}")
-			.day__title
-				.day__frame(style="background:#{Day.color}")
-				.day__title-text
-					.day__title-big #{Day.name}
-					.day__title-small  #{Day.description}
-			.day__content
-				+Template.dynamic(template=templateName data=answerList)
-
-
+		if Day.isActive
+			.day(data-id="#{Day._id}")
+				.day__title
+					.day__frame(style="background:#{Day.color}")
+					.day__title-text
+						.day__title-big #{Day.name}
+						.day__title-small  #{Day.description}
+				.day__content
+					+Template.dynamic(template=templateName data=answerList)
+					if isInRole 'admin'
+						a.article-trigger(href="#") 
+							span Показать содержание статьи
+							span.hidden Скрыть содержание статьи
+						+adminAnswers
+					else
+						if resultsList
+							.day__result
+								.container
+									h1 Ответ преподавателя
+									each resultsList
+										.row
+											.col-xs-12
+												.day__result-text 
+													p {{text}}
+												.day__result-name
+													.day__result-image(style="background-image: url({{authorImage}})")
+													| {{authorName}}
+			+footer
+		else
+			+notFound	
 	else
 		+notFound
+
+template(name="answersTabs")
+	li(role="presentation", class="{{#if first}}active{{/if}}")
+		a(href="#{{userId}}", aria-controls="profile", role="tab", data-toggle="tab") {{name}}
+
+template(name="answersField")
+	if value
+		.answer__item
+			h3 {{title}}
+			p {{nl2br value}}
+
+template(name="answersContent")
+	.answer.tab-pane(id="{{userId}}", data-id="{{userId}}", role="tabpanel", class="{{#if first}}active{{/if}}")
+		each data
+			+answersField
+		.answer__field
+			textarea(cols="30", rows="10", placeholder="Ответ на задания. Ученик — {{name}}.") {{result.text}}
+			input(type="button", value="Сохранить комментарий")
+
+template(name="adminAnswers")
+	.admin-area
+		.container
+			h1 Ответы учеников
+			if answersList
+				.tabpanel
+					ul.nav.nav-tabs(role="tablist")
+						each answersList
+							+answersTabs
+					.tab-content
+						each answersList
+							+answersContent
+			else
+				p Еще никто ничего не ответил
+						

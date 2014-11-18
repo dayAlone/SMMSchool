@@ -10,7 +10,7 @@
 
 @font-face
 	font-family 'Regal'
-	src url("/fonts/Regal.otf")
+	src url("/fonts/Regal.ttf")
 	font-weight normal
 
 
@@ -62,6 +62,7 @@ body
 
 .login
 	vcenter()
+	min-height 145px
 	background white
 	box-shadow: 2px 2px 0 0 rgba(0,0,0,.07);
 	width 400px
@@ -125,6 +126,21 @@ body
 		border-bottom 1px solid alpha(black,.09)
 		&:last-of-type
 			border-bottom 0
+	.badge
+		display inline-block
+		padding  0 10px
+		line-height 26px
+		height 25px
+		font-size 8px
+		margin-top 10px
+		border-radius 3px
+		letter-spacing 1px
+		color white
+		background blue
+		font-family 'CirceWeb-Regular'
+		text-transform: uppercase
+		&--answer
+			background #518e29
 	&__name
 		font-size 26px
 		line-height 26px
@@ -155,102 +171,28 @@ body
 			max-width 60px
 			max-height 60px
 	
+.footer
+	full-width()
+	line-height 60px
+	border-top 2px solid #eeeeee
+	height 60px
+	font-size 10px
+	color rgba(0,0,0,.5)
+	text-transform: uppercase
+	font-family 'CirceWeb-Regular'
+	letter-spacing: 2px
+	text-align: center
+	span
+		position relative
+		top -1px
+
 .left
 	text-align: left
 
 .right
 	text-align: right
 
-.day
-	&__title
-		full-width()
-		margin-top -20px
-		min-height 200px
-		margin-bottom 30px
-		position relative
-		b('bg.jpg', center -80px, gray, cover)
-		&-text
-			vcenter()
-			z-index 30
-			color white
-			text-align: center
-		&-big
-			font-size 55px
-			font-family 'CirceWeb-Bold'
-	&__frame
-		position absolute
-		top 0
-		left 0
-		width 100%
-		min-height 100%
-		opacity .8
-	&__content
-		background white
-		p
-			margin-bottom 20px
-		iframe
-			margin 20px 0
-		h1
-			margin-bottom 20px
-		video
-			width 100%
-			height 642px
-		.table
-			&.big
-				width 100%
-				td
-					
-					border 1px solid #dddddd
-					width 20%
-					height 150px
-					padding 0 20px
-					font-family 'CirceWeb-Light'
-					font-size 25px
-					line-height 25px
-					text-align: center
-		.nav-tabs
-			li
-				font-size 16px
-				&:not(.active)
-					a
-						color blue
-		.tab-pane
-			padding 30px 0
-			h2
-				margin-top 0
-				margin-bottom 20px
-			.row+.row
-				margin-top 10px
-	.container
-		max-width 883px
-		img
-			max-width 100%
-	.task
-		background gray
-		padding 40px 0
-		margin 20px 0 40px
-		.row+.row
-			margin-top 20px
-		h3
-			margin-top 0
-			margin-bottom 20px
-		textarea
-			full-width()
-			border 0
-			resize none
-			box-shadow: inset -2px -2px 0 0 rgba(0,0,0,.07);
-			padding 20px
-			min-height 200px
-			&:focus
-				outline 0
-
-
-
-
-
-
-
-
-
-
-
+.spinner
+	full-width()
+	padding 50px 0
+	

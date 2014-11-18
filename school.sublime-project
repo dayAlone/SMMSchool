@@ -2,12 +2,16 @@
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
 			"path": "."
 		},
 		{
-			"follow_symlinks": true,
 			"path": "/Users/slider/Documents/Projects/Packages"
+		},
+		{
+			"path": "/Users/slider/Documents/Projects/editable-table"
+		},
+		{
+			"path": "/Users/slider/Documents/Projects/Packages/table-to-json"
 		}
 	]
 }

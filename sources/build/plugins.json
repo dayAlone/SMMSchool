@@ -25,6 +25,12 @@
    "cookie":{
       "js":"/jquery.cookie/jquery.cookie.js"
    },
+   "table":{
+      "js": "/table/mindmup-editabletable.js"
+   },
+   "table2json":{
+      "js": "/table2json/src/jquery.tabletojson.js"
+   },
    "fotorama":{
       "js":"/fotorama/fotorama.js",
       "css":"/fotorama/fotorama.css",

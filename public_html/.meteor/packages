@@ -14,8 +14,10 @@ accounts-twitter
 accounts-facebook
 iron:router
 meteorhacks:fast-render
-autopublish
 http
 sl1der:moment-locales
 jparker:crypto-md5
+alanning:roles
+sacha:spin
+raix:handlebar-helpers
 
