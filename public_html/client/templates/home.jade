@@ -33,39 +33,44 @@ template(name="dayItem")
 					.badge.badge--answer Есть ответ преподавателя
 
 template(name="dayDetail")
-	if Day
-		if Day.isActive
-			.day(data-id="#{Day._id}")
-				.day__title
-					.day__frame(style="background:#{Day.color}")
-					.day__title-text
-						.day__title-big #{Day.name}
-						.day__title-small  #{Day.description}
-				.day__content
-					+Template.dynamic(template=templateName data=answerList)
-					if isInRole 'admin'
-						a.article-trigger(href="#") 
-							span Показать содержание статьи
-							span.hidden Скрыть содержание статьи
-						+adminAnswers
-					else
-						if resultsList
-							.day__result
-								.container
-									h1 Ответ преподавателя
-									each resultsList
-										.row
-											.col-xs-12
-												.day__result-text 
-													p {{text}}
-												.day__result-name
-													.day__result-image(style="background-image: url({{authorImage}})")
-													| {{authorName}}
-			+footer
+	if dayLoaded
+		if Day
+			if Day.isActive
+				.day(data-id="#{Day._id}")
+					.day__title
+						.day__frame(style="background:#{Day.color}")
+						.day__title-text
+							.day__title-big #{Day.name}
+							.day__title-small  #{Day.description}
+					.day__content
+
+						+Template.dynamic template=templateName data=getAnswer
+
+						if isInRole 'admin'
+							a.article-trigger(href="#") 
+								span Показать содержание статьи
+								span.hidden Скрыть содержание статьи
+							+adminAnswers
+						else
+							if resultsList
+								.day__result
+									.container
+										h1 Ответ преподавателя
+										each resultsList
+											.row
+												.col-xs-12
+													.day__result-text 
+														p {{text}}
+													.day__result-name
+														.day__result-image(style="background-image: url({{authorImage}})")
+														| {{authorName}}
+				+footer
+			else
+				+notFound	
 		else
-			+notFound	
+			+notFound
 	else
-		+notFound
+		+spinner
 
 template(name="answersTabs")
 	li(role="presentation", class="{{#if first}}active{{/if}}")
@@ -75,7 +80,20 @@ template(name="answersField")
 	if value
 		.answer__item
 			h3 {{title}}
-			p {{nl2br value}}
+			if $eq type 'table'
+				table.table.table-bordered
+					thead
+						tr
+							each head
+								th {{this}}
+					tbody
+						each value
+							tr
+								each this
+									td {{nl2br this}}
+
+			else
+				p {{nl2br value}}
 
 template(name="answersContent")
 	.answer.tab-pane(id="{{userId}}", data-id="{{userId}}", role="tabpanel", class="{{#if first}}active{{/if}}")

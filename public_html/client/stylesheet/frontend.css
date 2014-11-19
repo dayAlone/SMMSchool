@@ -3141,6 +3141,13 @@ body {
 .day__content h1 {
   margin-bottom: 20px;
 }
+.day__content h2 {
+  margin-top: 30px;
+  font-size: 29px;
+}
+.day__content h3 {
+  margin-bottom: 20px;
+}
 .day__content video {
   width: 100%;
   height: 642px;
@@ -3149,6 +3156,7 @@ body {
   width: 100%;
 }
 .day__content .table.big td {
+  vertical-align: middle;
   border: 1px solid #ddd;
   width: 20%;
   height: 150px;
@@ -3177,6 +3185,9 @@ body {
 .day .container {
   max-width: 883px;
 }
+.day .container--width {
+  max-width: 1160px;
+}
 .day .container img {
   max-width: 100%;
 }
@@ -3189,7 +3200,7 @@ body {
   width: 100%;
   background: #f6f6f4;
   padding: 20px 0 40px;
-  margin: -30px 0 40px;
+  margin: -10px 0 40px;
 }
 .day .task .row+.row {
   margin-top: 20px;
@@ -3224,31 +3235,54 @@ body {
   -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.07);
   box-shadow: 2px 2px 0 0 rgba(0,0,0,0.07);
 }
-.day .task .table {
+.day .task .table,
+.answer .table {
   margin-top: 45px;
   margin-bottom: 45px;
   font-family: 'CirceWeb-Regular';
 }
-.day .task .table th {
+.day .task .table th,
+.answer .table th {
   font-size: 17px;
 }
 .day .task .table td,
-.day .task .table th {
+.answer .table td,
+.day .task .table th,
+.answer .table th {
   font-size: 14px;
   padding: 10px 15px;
   height: 40px;
 }
 .day .task .table td:focus,
-.day .task .table th:focus {
+.answer .table td:focus,
+.day .task .table th:focus,
+.answer .table th:focus {
   outline: none;
 }
-.day .task .table td {
+.day .task .table td,
+.answer .table td {
   line-height: 18px;
+}
+.day .task .table td:focus,
+.answer .table td:focus {
+  background: #fff;
+  -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.07);
+  box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.07);
 }
 .features-list {
   padding: 25px 0;
 }
 .features-list .row + .row {
+  margin-top: 20px;
+}
+.article__text {
+  padding: 50px 0;
+  float: left;
+  width: 100%;
+  background: #fff;
+}
+.article__text + .task {
+  padding-top: 40px;
   margin-top: 20px;
 }
 .article.admin .task {

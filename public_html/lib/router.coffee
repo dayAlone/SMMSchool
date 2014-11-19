@@ -57,11 +57,14 @@ Router.map ->
 		path           : ['/days/:dayCode']
 		layoutTemplate : 'dayDetail'
 		fastRender: true
+		cache: true
 		waitOn: ()->
 			Meteor.subscribe 'adminUsers'
-			Meteor.subscribe 'answers'
 			Meteor.subscribe 'results'
 			Meteor.subscribe 'days'
+			Meteor.subscribe 'answers', onReady = ()->
+				Session.set 'dayLoaded', true	
+			
 		data: ->
 			day = Days.findOne 'sort' : parseInt @params.dayCode
 			if day
@@ -69,16 +72,15 @@ Router.map ->
 					day.isActive = true
 				else
 					day.isActive = false
-				return {
+				data = 
 					Day : day
-					templateName : "Days#{day.sort}"
-				}
+					templateName: "Days#{day.sort}"
+
+				return data
 	
 	@route 'signup',
 		path           : ['/signup/:invitationId']
 		layoutTemplate : 'singup'
-		fastRender: false
-		progressSpinner : true
 		waitOn : ()->
 			@dataLoaded = Meteor.subscribe 'invitations', @params.invitationId, onReady = ()->
 				Session.set 'Loaded', true

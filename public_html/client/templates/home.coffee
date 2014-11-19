@@ -1,5 +1,5 @@
 Template.home
-	.helpers 
+	.helpers
 		daysList: ()->
 			return Days.find({}).map (day, index, cursor)->
 				if moment(day.date) < moment() || Roles.userIsInRole Meteor.userId(), ['admin']
@@ -31,13 +31,16 @@ Template.adminAnswers
 						authorId : Meteor.userId()
 
 					data = []
+					if (typeof answer.data == 'string' || answer.data instanceof String)
+						answer.data = JSON.parse(answer.data)
+
 					$.each answer.data, ()->
 						data.push this
-
+					
 					answer.data = data
 
 					if index == 0
-						answer.first = true	
+						answer.first = true
 
 					author = Meteor.users.findOne(_id : answer.userId)
 					if author
@@ -47,11 +50,18 @@ Template.adminAnswers
 
 Template.dayDetail
 	.helpers
-		answerList: ()->
+		dayLoaded: ()->
+			return Session.get 'dayLoaded'
+		getAnswer: ()->			
 			answer = Answers.findOne
 				dayId  : @Day._id
 				userId : Meteor.userId()
+			,
+				reactive:false 
 			if answer
+				if typeof answer.data == 'string'
+					answer.data = JSON.parse(answer.data)
+				console.log answer.data
 				return answer.data
 		resultsList: ()->
 			results = Results.find

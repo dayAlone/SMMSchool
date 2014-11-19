@@ -13,11 +13,13 @@ sl1der:accounts-ui-unstyled
 accounts-twitter
 accounts-facebook
 iron:router
-meteorhacks:fast-render
 http
 sl1der:moment-locales
 jparker:crypto-md5
 alanning:roles
 sacha:spin
 raix:handlebar-helpers
+meteorhacks:fast-render
 
+
+npm-container
