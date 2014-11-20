@@ -25,6 +25,9 @@
    "cookie":{
       "js":"/jquery.cookie/jquery.cookie.js"
    },
+   "charts":{
+      "js":"/Chart.js/Chart.js"
+   },
    "table":{
       "js": "/table/mindmup-editabletable.js"
    },

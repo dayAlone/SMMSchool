@@ -22,7 +22,7 @@ imageop      = require 'gulp-image-optimization'
 svgSymbols   = require 'gulp-svg-symbols'
 
 
-plugins  = [ 'jquery', 'bootstrap', 'bem', 'hoverIntent', 'spin', 'velocity', 'table', 'table2json' ]
+plugins  = [ 'jquery', 'bootstrap', 'bem', 'charts', 'hoverIntent', 'spin', 'velocity', 'table', 'table2json' ]
 
 layout   = './public_html/client'
 sources  = './sources/'

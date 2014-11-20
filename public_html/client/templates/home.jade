@@ -33,44 +33,41 @@ template(name="dayItem")
 					.badge.badge--answer Есть ответ преподавателя
 
 template(name="dayDetail")
-	if dayLoaded
-		if Day
-			if Day.isActive
-				.day(data-id="#{Day._id}")
-					.day__title
-						.day__frame(style="background:#{Day.color}")
-						.day__title-text
-							.day__title-big #{Day.name}
-							.day__title-small  #{Day.description}
-					.day__content
+	if Day
+		if Day.isActive
+			.day(data-id="#{Day._id}")
+				.day__title
+					.day__frame(style="background:#{Day.color}")
+					.day__title-text
+						.day__title-big #{Day.name}
+						.day__title-small  #{Day.description}
+				.day__content
 
-						+Template.dynamic template=templateName data=getAnswer
+					+Template.dynamic template=templateName data=getAnswer
 
-						if isInRole 'admin'
-							a.article-trigger(href="#") 
-								span Показать содержание статьи
-								span.hidden Скрыть содержание статьи
-							+adminAnswers
-						else
-							if resultsList
-								.day__result
-									.container
-										h1 Ответ преподавателя
-										each resultsList
-											.row
-												.col-xs-12
-													.day__result-text 
-														p {{text}}
-													.day__result-name
-														.day__result-image(style="background-image: url({{authorImage}})")
-														| {{authorName}}
-				+footer
-			else
-				+notFound	
+					if isInRole 'admin'
+						a.article-trigger(href="#") 
+							span Показать содержание статьи
+							span.hidden Скрыть содержание статьи
+						+adminAnswers
+					else
+						if resultsList
+							.day__result
+								.container
+									h1 Ответ преподавателя
+									each resultsList
+										.row
+											.col-xs-12
+												.day__result-text 
+													p {{nl2br text}}
+												.day__result-name
+													.day__result-image(style="background-image: url({{authorImage}})")
+													| {{authorName}}
+			+footer
 		else
-			+notFound
+			+notFound	
 	else
-		+spinner
+		+notFound
 
 template(name="answersTabs")
 	li(role="presentation", class="{{#if first}}active{{/if}}")
@@ -91,7 +88,9 @@ template(name="answersField")
 							tr
 								each this
 									td {{nl2br this}}
-
+			else if $eq type 'image'
+				a(href="http://www.ucarecdn.com/#{value}/", target="_blank")
+					img(src="http://www.ucarecdn.com/#{value}/")
 			else
 				p {{nl2br value}}
 
@@ -102,7 +101,17 @@ template(name="answersContent")
 		.answer__field
 			textarea(cols="30", rows="10", placeholder="Ответ на задания. Ученик — {{name}}.") {{result.text}}
 			input(type="button", value="Сохранить комментарий")
-
+		if comments
+			h2 Ответы других преподавателей
+			.answer__result
+				each comments
+					.row
+						.col-xs-12
+							.day__result-text
+								p {{nl2br text}}
+							.day__result-name
+								.day__result-image(style="background-image: url({{authorImage}})")
+								| {{authorName}}
 template(name="adminAnswers")
 	.admin-area
 		.container

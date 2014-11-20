@@ -10,7 +10,7 @@
 				title: $(this).data 'title'
 				value: $(this).val()
 
-		$('.task table').each ()->
+		$('.task table:not(.clean)').each ()->
 			
 			head = $(this).find('thead th').map(-> 
 				return $(this).text() ).get()
@@ -28,6 +28,14 @@
 				title: $(this).data 'title'
 				head: head 
 				value: value
+		
+		$('.task .image').each ()->
+			if $(this).val().length > 0
+				answers[$(this).attr('name')] = 
+					type: 'image'
+					title: $(this).data 'title'
+					value: $(this).val()
+
 		data = 
 			day     : $('.day').data 'id'
 			answers : answers

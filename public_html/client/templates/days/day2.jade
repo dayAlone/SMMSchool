@@ -1,6 +1,5 @@
-
 template(name="Days2")
-	.article(class="{{#if isInRole 'admin'}}admin{{/if}}")
+	.article(class="{{#if isInRole 'admin'}}admin hidden{{/if}}")
 		.task
 			.container
 				h1 Анализ собственного гардероба
@@ -19,8 +18,7 @@ template(name="Days2")
 		.task
 			.container
 				h3 После того, как мы определили какие монстры живут в твоем платяном шкафу — заполни таблицу с теми вещами, которые ты решила выбросить, отдать или продать.
-				
-				table.table.table-bordered(name="t1", data-title="Скелеты в шкафу")
+				table(name="t1", data-title="Скелеты в шкафу", class="table table-bordered {{#if $not t1}}clean{{/if}}")
 					thead 
 						tr
 							th(width="10%",  data-override="0") Вещь
@@ -147,8 +145,7 @@ template(name="Days2")
 				h1 Таблица «Мой гардероб»
 				p После того как все вещи были распределены по категориям, а от ненужных вещей мы избавились — самое время приступить к каталогизации собственного гардероба. 
 
-				
-				table.table.table-bordered(name="t2", data-title="Мой гардероб")
+				table(name="t2", data-title="Мой гардероб", class="table table-bordered {{#if $not t2}}clean{{/if}}")
 					thead 
 						tr
 							th(width="10%",  data-override="0") Название вещи
@@ -236,6 +233,6 @@ template(name="Days2")
 							| Впиши в этот столбик точную или приблизительную стоимость данной вещи.
 					.row
 						.col-xs-3.col-lg-2
-							strong Эффект цели
+							strong Эффект вещи
 						.col-xs-9.col-lg-10
 							| Соответствует ли цена вещи производимому эффекту? Выглядит дороже, выглядит дешево и т.д.

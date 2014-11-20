@@ -33,9 +33,10 @@
     "tooltip": "git@github.com:medelbou/Tooltip-for-Google-Maps.git",
     "slimmenu": "git@github.com:adnantopal/slimmenu.git",
     "perfect-scrollbar": "~0.5.6",
-    "bgcheck"            : "git@github.com:kennethcachia/background-check.git",
-    "table" : "git@github.com:dayAlone/editable-table.git",
-    "table2json":"https://github.com/dayAlone/table-to-json.git"
+    "bgcheck": "git@github.com:kennethcachia/background-check.git",
+    "table": "git@github.com:dayAlone/editable-table.git",
+    "table2json": "https://github.com/dayAlone/table-to-json.git",
+    "Chart.js": "~1.0.1"
   },
   "moduleType": [
     "amd",

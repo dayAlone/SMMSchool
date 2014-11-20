@@ -178,6 +178,8 @@ Template.Days2.events =
 		getData()
 	'input .article .task table tbody td, keydown .article .task table tbody td' : (e)->
 		table = $(e.target).parents('table')
+		if table.hasClass 'clean'
+			table.removeClass 'clean'
 		if table.find('tbody tr:last-of-type td').length != table.find('tbody tr:last-of-type td:empty').length
 			col = table.find('tbody tr:last-of-type td').length
 			table.find('tbody').append '<tr></tr>'

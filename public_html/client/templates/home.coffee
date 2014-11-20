@@ -8,7 +8,6 @@ Template.home
 				else
 					day.date = moment(day.date).fromNow()
 
-
 				results = Results.find
 					dayId  : day._id
 					userId : Meteor.userId()
@@ -29,6 +28,12 @@ Template.adminAnswers
 						dayId    : answer.dayId
 						userId   : answer.userId
 						authorId : Meteor.userId()
+
+					answer.comments = Results.find(
+						dayId    : answer.dayId
+						userId   : answer.userId
+						authorId : { $ne: Meteor.userId() }
+					).fetch()
 
 					data = []
 					if (typeof answer.data == 'string' || answer.data instanceof String)

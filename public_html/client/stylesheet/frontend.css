@@ -2771,6 +2771,11 @@ tbody.collapse.in {
   src: url("/fonts/Regal.ttf");
   font-weight: normal;
 }
+@font-face {
+  font-family: 'Regal';
+  src: url("/fonts/RegalBold.ttf");
+  font-weight: bold;
+}
 body {
   background: #f6f6f4;
   font-family: 'Regal', serif;
@@ -3089,25 +3094,30 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
-.day__result {
+.day .day__result,
+.answer__result {
   float: left;
   width: 100%;
   background: rgba(217,215,98,0.2);
   padding: 40px 0 30px;
 }
-.day__result .container {
+.day .day__result .container,
+.answer__result .container {
   max-width: 600px !important;
 }
-.day__result h1 {
+.day .day__result h1,
+.answer__result h1 {
   float: left;
   width: 100%;
   margin-top: 0;
   margin-bottom: 30px !important;
 }
-.day__result .row+.row {
+.day .day__result .row+.row,
+.answer__result .row+.row {
   margin-top: 30px;
 }
-.day__result-name {
+.day .day__result-name,
+.answer__result-name {
   float: left;
   width: 100%;
   height: 30px;
@@ -3117,7 +3127,8 @@ body {
   margin-bottom: 20px;
   text-align: right;
 }
-.day__result-image {
+.day .day__result-image,
+.answer__result-image {
   float: right;
   width: 30px;
   height: 30px;
@@ -3140,6 +3151,10 @@ body {
 }
 .day__content h1 {
   margin-bottom: 20px;
+}
+.day__content p + h1,
+.day__content textarea + h1 {
+  margin-top: 50px;
 }
 .day__content h2 {
   margin-top: 30px;
@@ -3166,11 +3181,26 @@ body {
   line-height: 25px;
   text-align: center;
 }
+.day__content .nav-tabs.colors li a {
+  color: #000;
+  font-size: 13px;
+}
 .day__content .nav-tabs li {
   font-size: 16px;
+  margin-top: 10px;
+}
+.day__content .nav-tabs li.active a {
+  background-color: #fff !important;
+  color: #000 !important;
 }
 .day__content .nav-tabs li:not(.active) a {
   color: #4057ac;
+}
+.day__content ol {
+  margin-bottom: 30px;
+}
+.day__content ol li {
+  margin-bottom: 15px;
 }
 .day__content .tab-pane {
   padding: 30px 0;
@@ -3241,9 +3271,20 @@ body {
   margin-bottom: 45px;
   font-family: 'CirceWeb-Regular';
 }
+.day .task .table[name="t2"] tr td:nth-child(2),
+.answer .table[name="t2"] tr td:nth-child(2),
+.day .task .table[name="t2"] tr th:nth-child(2),
+.answer .table[name="t2"] tr th:nth-child(2),
+.day .task .table[name="t2"] tr td:nth-child(6),
+.answer .table[name="t2"] tr td:nth-child(6),
+.day .task .table[name="t2"] tr th:nth-child(6),
+.answer .table[name="t2"] tr th:nth-child(6) {
+  text-align: center;
+}
 .day .task .table th,
 .answer .table th {
   font-size: 17px;
+  line-height: 14px;
 }
 .day .task .table td,
 .answer .table td,
@@ -3275,11 +3316,96 @@ body {
 .features-list .row + .row {
   margin-top: 20px;
 }
+.uploadcare-widget {
+  font-family: 'CirceWeb-Regular';
+  font-size: 16px;
+}
+.uploadcare-widget-file-name {
+  border: 0;
+  color: #4057ac;
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 calc(100% - 1px);
+}
+.uploadcare-widget-file-name:hover {
+  color: rgba(64,87,172,0.5);
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 calc(100% - 1px);
+}
+.uploadcare-widget-button {
+  background: #4057ac;
+  line-height: 30px;
+  padding: 1px 20px 0;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.uploadcare-widget-button:hover {
+  background: rgba(64,87,172,0.7);
+}
+.center {
+  text-align: center;
+}
+h4 {
+  font-size: 20px;
+}
 .article__text {
   padding: 50px 0;
   float: left;
   width: 100%;
   background: #fff;
+}
+.article__text canvas {
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+.article__text .circles.row > div {
+  padding: 0 30px;
+}
+.article__text .circle__frame {
+  margin: 30px 0;
+  position: relative;
+}
+.article__text .circle__frame img {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.article__text p a {
+  color: #4057ac;
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(64,87,172,0.5) 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 calc(100% - 1px);
 }
 .article__text + .task {
   padding-top: 40px;
@@ -3339,6 +3465,9 @@ body {
   float: left;
   width: 100%;
 }
+.answer__result {
+  background: transparent;
+}
 .answer h3 {
   font-family: 'CirceWeb-Bold';
   margin-bottom: 10px;
@@ -3361,6 +3490,11 @@ body {
   margin-top: 40px;
   padding: 40px;
   padding-bottom: 25px;
+}
+.answer__field + h2 {
+  margin-top: 40px !important;
+  float: left;
+  width: 100%;
 }
 .answer__field textarea {
   float: left;
