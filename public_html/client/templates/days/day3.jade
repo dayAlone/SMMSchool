@@ -2,10 +2,11 @@ template(name="Days3")
 	.article(class="{{#if isInRole 'admin'}}admin hidden{{/if}}")
 		.container
 			h1 Работа с цветом
-			| <iframe width="853" height="480" src="//www.youtube.com/embed/QY2jTJl9khg?rel=0&amp;controls=2&amp;showinfo=0&amp;hd=1&amp;vq=hd1080" frameborder="0" allowfullscreen></iframe>
+			.embed-responsive.embed-responsive-16by9
+				| <iframe width="853" height="480" src="//www.youtube.com/embed/QY2jTJl9khg?rel=0&amp;controls=2&amp;showinfo=0&amp;hd=1&amp;vq=hd1080" frameborder="0" allowfullscreen></iframe>
 			p 
 				img(src="/images/colors.jpg")
-			p <strong>Цветотип</strong> – это совокупность определенных признаков  внешности человека, в зависимости от цвета глаз, волос и кожи. В зависимости от этого можно подбирать наиболее подходящие цвета при выборе одежды или оттенков косметики.  Существует 4 типа внешности: зима, весна, лето и осень.
+			p <strong>Цветотип</strong> – это совокупность определенных признаков внешности человека, в зависимости от цвета глаз, волос и кожи. Исходя из этого этого можно подбирать наиболее подходящие цвета при выборе одежды или оттенков косметики. Существует 4 типа внешности: зима, весна, лето и осень.
 			h3 Не смотря на то, что цветотипы это наиболее распространенная практика работы с цветом - она не самая эффективная и имеет массу ограничений:
 			ol
 				li Ограничение по 4 группам — этого не достаточно для того, чтобы точно определить какие цвета действительно подходят.
@@ -39,7 +40,7 @@ template(name="Days3")
 				h3 Какие цвета не нравятся или кажется, что они не идут?
 				textarea(placeholder="Перечисли их в этом поле", name="q4", data-title="Какие цвета не нравятся или кажется, что они не идут?") {{q4.value}}
 				h3 Составь собственную цветовую раскладку. 
-				textarea(placeholder="Для этого напиши какие цвета в твоем гардеробе преобладают больше, а какие меньше. Например: базовые цвета - 70%, принты - 20%, а акценты и яркие ткани - 10%", name="q4", data-title="Составь собственную цветовую раскладку") {{q5.value}}
+				textarea(placeholder="Для этого напиши какие цвета в твоем гардеробе преобладают больше, а какие меньше. Например: базовые цвета - 70%, принты - 20%, а акценты и яркие ткани - 10%", name="q5", data-title="Составь собственную цветовую раскладку") {{q5.value}}
 		.article__text
 			.container
 				h1 Цветовые схемы
@@ -72,21 +73,22 @@ template(name="Days3")
 					strong Акцентное сочетание.
 					| Не использует цветовую  схему координат напрямую. Акцент - это намеренное выделение, которое может использовать цвет или принт. Акцент также может быть сформирован фактурными решениями или геометрией, а также аксессуарами, обувью или сумкой. 
 		.task
-			.container
-				h3 Загрузи в рабочую тетрадь три цветовых комплекта. Используй вещи из своего гардероба по максимуму. 
-				.row.center
+			.container.center
+				h2 Загрузи в рабочую тетрадь три цветовых комплекта. 
+				p Используй вещи из своего гардероба по максимуму. 
+				.row
 					.col-xs-4
 						h4
 							strong Акцент
-						input(type="hidden" data-title="Акцент" role="uploadcare-uploader" data-images-only="true" value="{{i1.value}}" name="i1").image
+						input(type="hidden" data-max-size="3145728" data-title="Акцент" role="uploadcare-uploader" data-images-only="true" value="{{$check i1.value}}" name="i1").image
 					.col-xs-4
 						h4
 							strong Нюанс
-						input(type="hidden" data-title="Нюанс" role="uploadcare-uploader" data-images-only="true" value="{{i2.value}}" name="i2").image
+						input(type="hidden" data-max-size="3145728" data-title="Нюанс" role="uploadcare-uploader" data-images-only="true" value="{{$check i2.value}}" name="i2").image
 					.col-xs-4
 						h4
 							strong Контраст
-						input(type="hidden" data-title="Контраст" role="uploadcare-uploader" data-images-only="true" value="{{i3.value}}" name="i3").image
+						input(type="hidden" data-max-size="3145728" data-title="Контраст" role="uploadcare-uploader" data-images-only="true" value="{{$check i3.value}}" name="i3").image
 		.article__text
 			.container
 				h1 Цветовая азбука
@@ -152,7 +154,8 @@ template(name="Days3")
 							ul
 								li в бизнес-процессах, на деловых переговорах;
 								li одевай на собеседования.
-								li strong Не используй:
+							
+							strong Не используй:
 							ul
 								li на праздничных мероприятиях, в творческой среде и при работе с детьми;
 								li если необходимо быть в центре внимания;

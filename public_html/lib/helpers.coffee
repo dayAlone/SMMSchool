@@ -1,9 +1,31 @@
 @delay = (ms, func) -> setTimeout func, ms
 
+UI.registerHelper '$in_array', (a, b)->
+	inArray = false
+	_.each b, (v,k)->
+		if v.toString() == a.toString()
+			inArray = true
+	return inArray
+
+UI.registerHelper '$check', (a)->
+	
+	pos = 0;
+	if a
+		pos = a.indexOf( 'cdn' );
+		
+		if pos == -1
+			return a;
+		else
+			str = /http:\/\/www.ucarecdn.com\/(.*?)\//g
+			x = a.replace(/http:\/\/www.ucarecdn.com\/(.*?)\//, '$1')
+			return x
+
 @getData = (timer=true)->
 	action = ()->
 		console.log 2
+		
 		answers = {}
+		
 		$('.task textarea:not(.editor)').each ()->
 			answers[$(this).attr('name')] = 
 				type: 'textarea'
@@ -29,6 +51,18 @@
 				head: head 
 				value: value
 		
+		$('.task input[type=checkbox]:checked').each ()->
+			if !answers[$(this).attr('name')]
+				answers[$(this).attr('name')] = {
+					type       : 'checkbox'
+					value      : [],
+					value_text : [],
+					title      : $('body').find(".#{$(this).attr('name')}-title").text()
+				}
+			
+			answers[$(this).attr('name')].value.push $(this).val()
+			answers[$(this).attr('name')].value_text.push $('body').find("label[for='#{$(this).attr('id')}']").text()
+
 		$('.task .image').each ()->
 			if $(this).val().length > 0
 				answers[$(this).attr('name')] = 

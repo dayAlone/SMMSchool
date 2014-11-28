@@ -54,6 +54,11 @@
          "/hypher_lib/dist/browser/ru.js"
       ]
    },
+   "iCheck":{
+      "js":"/iCheck/icheck.js",
+      "css":"/iCheck/skins/square/blue.css",
+      "files": ["/iCheck/skins/square/blue.png","/iCheck/skins/square/blue@2x.png"]
+   },
    "imagesLoaded":{
       "js":"/imagesloaded/imagesloaded.pkgd.js"
    },
@@ -86,6 +91,9 @@
          "/spin.js/spin.js",
          "/spin.js/jquery.spin.js"
       ]
+   },
+   "randomColor":{
+      "js":"/randomColor/randomColor.js"
    },
    "scrollbar":{
       "js":"/perfect-scrollbar/src/perfect-scrollbar.js",

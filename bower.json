@@ -36,7 +36,9 @@
     "bgcheck": "git@github.com:kennethcachia/background-check.git",
     "table": "git@github.com:dayAlone/editable-table.git",
     "table2json": "https://github.com/dayAlone/table-to-json.git",
-    "Chart.js": "~1.0.1"
+    "Chart.js": "~1.0.1",
+    "iCheck": "~1.0.2",
+    "randomColor": "~0.1.1"
   },
   "moduleType": [
     "amd",

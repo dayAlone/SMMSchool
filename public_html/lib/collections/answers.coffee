@@ -20,7 +20,7 @@ Meteor.methods
 				answer = 
 					userId : user
 					dayId  : day._id
-					data   : JSON.stringify data.answers
+					data   : data.answers
 
 				answer._id = Answers.insert answer
 

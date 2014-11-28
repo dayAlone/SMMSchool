@@ -63,6 +63,49 @@ template(name="dayDetail")
 												.day__result-name
 													.day__result-image(style="background-image: url({{authorImage}})")
 													| {{authorName}}
+							if $eq Day.sort 7
+								.library
+									.container
+										h1 Библиотека по имиджу и стилю
+										.row
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/wsq5hpl229818a7/%5BDanielle_LaPorte%2C_Carrie_McCarthy%5D_Style_Statemen%28BookFi.org%29.epub?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/1.jpg)")
+													.library__title Style Statement: Live by Your Own Design
+													.library__author Danielle LaPorte, Carrie McCarthy 
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/c0lsi2to2ig601s/5_shagov_Svetlana_Chertova.pdf?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/2.jpg)")
+													.library__title 5 простых шагов, к идеальному гардеробу
+													.library__author Светлана Чертова
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/tzt8dqn1qllcqjx/Baumgartner_D._Mne_Opyat_Nechego_Nadet_K.epub?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/3.jpg)")
+													.library__title Мне опять нечего надеть
+													.library__author Дженифер Баумгартнер
+										.row
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/nbrhkwwo9pf4v4i/Code_of_style.pdf?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/4.jpg)")
+													.library__title Кодекс стиля
+													.library__author Наталия Туркенич
+										
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/zxkin2aedw1dmyz/Gudmen_Je._Eto_nadevaem.pdf?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/5.jpg)")
+													.library__title Это – надеваем, это – выбрасываем!
+													.library__author Эми Гудмэн
+											.col-xs-4
+												a.library__item(href="https://www.dropbox.com/s/ktfy329vapsl5f6/Kulagina_E._Chto_s_chem_nosit.pdf?dl=0" target="_blank")
+													.library__frame
+														.library__image(style="background-image:url(/images/books/6.jpg)")
+													.library__title Что с чем носить?
+													.library__author Екатерина Кулагина
 			+footer
 		else
 			+notFound	
@@ -88,9 +131,13 @@ template(name="answersField")
 							tr
 								each this
 									td {{nl2br this}}
+			
+			else if $eq type 'checkbox'
+				+each value_text
+					p {{this}}
 			else if $eq type 'image'
-				a(href="http://www.ucarecdn.com/#{value}/", target="_blank")
-					img(src="http://www.ucarecdn.com/#{value}/")
+				a(href="http://www.ucarecdn.com/{{$check value}}/", target="_blank")
+					img(src="http://www.ucarecdn.com/{{$check value}}/-/preview/600x600/-/quality/lighter/")
 			else
 				p {{nl2br value}}
 
@@ -112,6 +159,34 @@ template(name="answersContent")
 							.day__result-name
 								.day__result-image(style="background-image: url({{authorImage}})")
 								| {{authorName}}
+
+template(name="shoppingList")
+	.container
+		.login.login--width
+			h1 Шоппинг-лист
+			table(name="t2", data-title="Шоппинг лист", class="table xl-margin-top table-bordered diagramm")
+				thead 
+					tr
+						th(width="30%",  data-override="0") Вещь
+						th(width="30%",  data-override="1") Бюджет
+						th(width="30%",  data-override="2") Магазин
+
+				tbody
+					if table
+						each table
+							tr
+								each this
+									td {{nl2br this}}
+					else
+						tr
+							td Черная трикотажная футболка
+							td 600
+							td New Yorker
+						tr
+							td Белые брюкт
+							td 1 200
+							td H&M
+
 template(name="adminAnswers")
 	.admin-area
 		.container

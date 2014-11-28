@@ -1,0 +1,18 @@
+template(name="Days7")
+	.article(class="{{#if isInRole 'admin'}}admin hidden{{/if}}")
+		.task
+			.container
+				h1 Работа с образами
+				h3 Загрузи три самых спорных образа, которые тебя смущают для того, чтобы получить рекомендации стилиста по работе с ними.
+				.row.center.xxl-margin-bottom
+					.col-xs-4
+						input(type="hidden" data-max-size="3145728" data-title="Образ 1" role="uploadcare-uploader" data-images-only="true" value="{{$check i1.value}}" name="i1").image
+					.col-xs-4
+						input(type="hidden" data-max-size="3145728" data-title="Образ 2" role="uploadcare-uploader" data-images-only="true" value="{{$check i2.value}}" name="i2").image
+					.col-xs-4
+						input(type="hidden" data-max-size="3145728" data-title="Образ 3" role="uploadcare-uploader" data-images-only="true" value="{{$check i3.value}}" name="i3").image
+				h1.xxl-margin-top.xxl-padding-top Отзыв о программе
+				p Оставь комментарий о пройденном курсе. Не бойся быть честной. Мнение каждого студента учитывается при формировании новых курсов и программ. 
+				p Поделись своими впечатлениями и если у тебя есть какие-то замечания - обязательно сообщи он них, чтобы команда школы «Стильно Модно Молодежно» могла внести коррективы.
+				p Вместе с ответом преподавателя ты получишь доступ к он-лайн библиотеке по имиджу и стилю. Это наше тебе "спасибо" за участие и поддержку проекта.
+				textarea(placeholder="Напиши отзыв сюда", name="q1", data-title="Отзыв") {{q1.value}}

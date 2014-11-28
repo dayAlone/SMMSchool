@@ -4,7 +4,10 @@ Template.home
 			return Days.find({}).map (day, index, cursor)->
 				if moment(day.date) < moment() || Roles.userIsInRole Meteor.userId(), ['admin']
 					day.isActive = true
-					day.date = "Материалы доступны"
+					if moment(day.date) > moment()
+						day.date = "Для студентов будут доступны " + moment(day.date).fromNow()
+					else
+						day.date = "Материалы доступны"
 				else
 					day.date = moment(day.date).fromNow()
 
@@ -66,7 +69,6 @@ Template.dayDetail
 			if answer
 				if typeof answer.data == 'string'
 					answer.data = JSON.parse(answer.data)
-				console.log answer.data
 				return answer.data
 		resultsList: ()->
 			results = Results.find

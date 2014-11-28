@@ -1,0 +1,183 @@
+template(name="Days6")
+	.article(class="{{#if isInRole 'admin'}}admin {{/if}}")
+		.container
+			h1 Выявление потребностей 
+			.embed-responsive.embed-responsive-16by9
+				| <iframe width="853" height="480" src="//www.youtube.com/embed/m2s2XbZkioo?rel=0&amp;controls=2&amp;showinfo=0&amp;hd=1&amp;vq=hd1080" frameborder="0" allowfullscreen></iframe>
+		.task
+			.container
+				h1 Зоны и соотношение
+				.row
+					.col-xs-6
+						h2.center На данный момент
+						.row
+							.col-xs-8.col-xs-offset-2
+								div <br>
+									canvas(data-col="2" width="400" height="400")
+					.col-xs-6
+						h2.center Планирование
+						.row
+							.col-xs-8.col-xs-offset-2
+								div <br>
+									canvas(data-col="3" width="400" height="400")
+					
+					.row
+						.col-xs-8.col-xs-offset-2
+							table(name="t1", data-title="Зоны и соотношение", class="table table-bordered diagramm {{#if $not t1}}clean{{/if}}")
+								thead 
+									tr
+										th(width="30%",  data-override="0") Деятельность
+										th(width="30%",  data-override="1") На данный момент
+										th(width="30%",  data-override="2") Планирование
+										th(width="30",  data-override="3") Цвет
+
+								tbody
+									if t1.value
+										each t1.value
+											tr
+												each this
+													td(contenteditable="true") {{nl2br this}}
+									else
+										tr
+											td(contenteditable="true") Работа
+											td(contenteditable="true") 32
+											td(contenteditable="true") 22
+											td
+												.color-picker(style="background:#808685;")
+										tr
+											td(contenteditable="true") Отдых
+											td(contenteditable="true") 5
+											td(contenteditable="true") 13	
+											td
+												.color-picker(style="background:#d7973e;")
+										tr
+											td(contenteditable="true") Спорт 	
+											td(contenteditable="true") 0
+											td(contenteditable="true") 5	
+											td
+												.color-picker(style="background:#aa2e23;") 
+										tr
+											td(contenteditable="true")
+											td(contenteditable="true")
+											td(contenteditable="true")
+											td
+												.color-picker(style="background:#79889f;")
+
+				h3 Внимательно посмотри на эти две диаграммы. Сравни их и напиши есть ли какое-то противоречие между ними. Какую зону ты выбираешь для себя как самую важную на данный момент?
+				p Это нужно для того, чтобы составить список необходимых покупок, которые нужны и которые будут помогать тебе и соответствовать задачам и поставленным целям. 
+				textarea(placeholder="Ответ напиши сюда", name="q1", data-title="Сравнение таблиц.") {{q1.value}}
+		.article__text
+			.container
+				.embed-responsive.embed-responsive-16by9
+					| <iframe width="853" height="480" src="//www.youtube.com/embed/3Kkf1FqbKFM?rel=0&amp;controls=2&amp;showinfo=0&amp;hd=1&amp;vq=hd1080" frameborder="0" allowfullscreen></iframe>
+				h1 Формула реальной стоимости вещи 
+				table(valign="center" width="100%")
+					tr
+						td(width="45%" style="border-bottom: 1px solid #333333")
+							h3.center Стоимость вещи
+						td(rowspan="2" width="50")
+							h1.center.xxs-margin-top
+								strong =
+						td(rowspan="2" width="45%")
+							h3.center Фактическая стоимость<br> одной носки 
+					tr
+						td.center
+							h3.center.no-margin-bottom Количество носок
+							p ( число раз * сезон )
+						td
+						td
+				h4 Пример
+				p Платье стоит 3 000 рублей, будет в носке 4 раза в месяц. При этом платье нейтрального цвета и подходит для использования в холодные сезоны - осенью и зимой.
+				p 3 000 / ( 4 х 6 ) = 125 рублей за каждый день (отлично!)
+
+				h4 Пример
+				p Рубашка от модного дизайнера стоит 9 700 рублей. Рубашка имеет обильный декор и сможет быть надета не больше 1 раза за месяц на вечеринку. При этом носить ее можно только летом, в более холодные сезоны верхняя одежда повредит декоративные элементы.
+				p 9 700 / ( 1 х 3 ) = 3 233 рубля за каждый день (оу!!)
+		.task
+			.container
+				h3.center Шоппинг-лист
+				.row
+					.col-xs-8.col-xs-offset-2
+						table(name="t2", data-title="Шоппинг лист", class="table s-margin-top table-bordered diagramm {{#if $not t2}}clean{{/if}}")
+							thead 
+								tr
+									th(width="30%",  data-override="0") Вещь
+									th(width="30%",  data-override="1") Бюджет
+									th(width="30%",  data-override="2") Магазин
+
+							tbody
+								if t2.value
+									each t2.value
+										tr
+											each this
+												td(contenteditable="true") {{nl2br this}}
+								else
+									tr
+										td(contenteditable="true") Черная трикотажная футболка
+										td(contenteditable="true") 600
+										td(contenteditable="true") New Yorker
+									tr
+										td(contenteditable="true") Белые брюки
+										td(contenteditable="true") 1 200
+										td(contenteditable="true") H&M
+									tr
+										td(contenteditable="true")
+										td(contenteditable="true")
+										td(contenteditable="true")
+						a.print-version(href="/shopping-list/", target="_blank") Версия для печати
+		.acticle__text
+			.container
+				h1 Возвраты
+				ol
+					li
+						strong Паспорт или документ удостоверяющий личность. 
+						| Ты можешь вернуть в магазин не подошедшую вещь даже в случае, если к ее качеству у тебя претензий нет. Для этого нужно предоставить документ. 
+					li
+						strong Две недели или 14 дней не считая день покупки. 
+						| Если с момента покупки прошло не больше 14 дней, с возвратом не должно возникнуть никаких проблем (это не относится к некоторым группам товаров, не подлежащим обмену или возврату). Ты имеешь право вернуть вещь, если она не подходит по размеру, габаритам, расцветке, форме, фасону или комплектации. 
+					li
+						strong Кассовый чек. 
+						| Проще всего осуществить возврат, если сохранился кассовый чек. Подойди с ним и с неудачной покупкой к продавцу для того чтобы вернуть или обменять товар. 
+					li
+						strong Обмен товара. 
+						| Ты можешь обменять товар на аналогичный (но другого размера, фасона, расцветки или комплектации). Если необходимого товара для обмена нет, то можно получить замену позже (продавец обязан будет сообщить о приходе нужного товара). 
+					li
+						strong Возврат денег за покупку. 
+						| Торговая организация обязана вернуть деньги в трехдневный срок, но если операция была совершена за наличные стоит вернуть деньги в этот же день. Компенсируется полностью вся сумма.
+					li
+						strong Возврат денежной сумму на карту. 
+						| Если ты совершила покупку по банковской карте, то для возврата денежных средств необходимо предоставить ее кассиру. Это операция занимает от 5 до 7 рабочих дней. Чек на возврат нужно сохранить до поступления всей суммы на счет. 
+					li
+						strong Документация. 
+						| Проверяй документы и бланк возврата, которые были составлены в магазине. В них четко должна быть прописана сумма, причина и артикул товара. Твои данные так же должны быть прописаны четко. Если сумма поступает на карту, нужно потребовать чек с надписью «Возврат». 
+					li
+						strong Вещь должна сохранить товарный вид. 
+						| Обрати внимание, что вернуть не подошедшую вещь можно только в том случае, если она не использовалась и сохранила потребительские свойства и товарный вид. Упаковка должна быть сохранена, а все бирки, ярлыки и пломбы присутствовать на месте.
+					li
+						strong Возврат вещей в определенные дни. 
+						| Некоторые магазины осуществляют возврат товара в определенные дни (только будни, только выходные) - это неправомочно, так как срок возврата может за это время истечь. Требуй принять товар или общайся с администрацией магазина. 
+					li
+						strong Претензия. 
+						| Если вещь отказываются принять - пиши претензию. Если продавец не хочет идти навстречу, составьте письменную претензию, подробно изложив все обстоятельства и выдвинув определенные требования. Не забудь, что эта бумага должна быть написана в двух экземплярах, причем на твоем продавец должен поставить свою подпись и печать магазина.
+					li
+						strong Суд. 
+						| Обычно этого бывает достаточно для того, чтобы уладить проблему. Если же нет – смело обращайся в надзорный орган (например, Департамент торговли и услуг) или, если покупка дорогостоящая, в суд. 
+					li
+						strong Товары, не подлежащие обмену и возврату. 
+						| Имей в виду, нельзя вернуть в магазин постельное и нательное белье, косметику и парфюмерию, товары для грудных детей и продовольственные товары, драгоценные металлы и ювелирные изделия, бытовую химию и еще несколько групп товаров. 
+					li
+						strong Закон о защите прав потребителей. 
+						| Ознакомиться с полным списком прав и обязанностей можно тут:
+						a(href="http://www.consultant.ru/popular/consumerism/", target="_blank") http://www.consultant.ru/popular/consumerism/
+				
+
+
+
+
+
+
+
+
+
+
+

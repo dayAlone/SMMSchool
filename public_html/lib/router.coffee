@@ -53,6 +53,29 @@ Router.map ->
 			Meteor.subscribe 'days'
 			Meteor.subscribe 'results'
 
+	@route 'shopping-list',
+		path           : ['/shopping-list/']
+		layoutTemplate : 'shoppingList'
+		fastRender: true
+		cache: true
+		waitOn: ()->
+			Meteor.subscribe 'results'
+			Meteor.subscribe 'days'
+			Meteor.subscribe 'answers'
+		data: ->
+			day = Days.findOne 'sort' : 6
+			answer = Answers.findOne
+				dayId: day._id
+				userId: Meteor.userId()
+			console.log answer
+			if answer
+				if typeof answer.data == 'string'
+					answer.data = JSON.parse(answer.data)
+				if answer.data.t2
+					return {
+						table: answer.data.t2.value
+					}
+
 	@route 'days',
 		path           : ['/days/:dayCode']
 		layoutTemplate : 'dayDetail'

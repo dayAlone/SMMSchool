@@ -22,7 +22,7 @@ imageop      = require 'gulp-image-optimization'
 svgSymbols   = require 'gulp-svg-symbols'
 
 
-plugins  = [ 'jquery', 'bootstrap', 'bem', 'charts', 'hoverIntent', 'spin', 'velocity', 'table', 'table2json' ]
+plugins  = [ 'jquery', 'bootstrap', 'bem', 'charts', 'hoverIntent', 'randomColor', 'iCheck', 'spin', 'velocity', 'table', 'table2json' ]
 
 layout   = './public_html/client'
 sources  = './sources/'
@@ -53,7 +53,6 @@ loadPlugins = (x, y)->
 					data[key].push bower+z
 			else
 				data[key].push bower+elm[key]
-
 	return data[y]
 
 # JavaScript functions
@@ -74,6 +73,7 @@ gulp.task 'css_bootstrap', ->
 gulp.task 'css_plugins', ->
 	gulp.src loadPlugins plugins, 'css'
 	.pipe concat 'plugins.css'
+	.pipe(replace('url(blue', 'url(/images/blue'))
 	.pipe gulp.dest path.css.sources
 
 gulp.task 'css_stylus', ->
@@ -101,7 +101,7 @@ gulp.task 'css_mini', ->
 
 gulp.task 'copy', ->
 	gulp.src loadPlugins plugins, 'files'
-	.pipe gulp.dest "#{layout}/images/plugins/"
+	.pipe gulp.dest "./public_html/public/images/"
 
 # SVG functions
 
@@ -133,7 +133,7 @@ gulp.task 'reload', ->
 	livereload.changed()
 
 gulp.task 'ready', ->
-	sequence 'js_plugins', 'js_front', 'js_mini', 'css_bootstrap', 'css_plugins', 'css_front', 'css_mini'
+	sequence 'js', 'css_bootstrap', 'css_plugins', 'css_front', 'css_mini', 'copy'
 
 gulp.task 'default', ->
 	
@@ -155,7 +155,7 @@ gulp.task 'default', ->
 		sequence 'reload'
 	
 	gulp.watch ["#{path.css.sources}/bootstrap/bootstrap.less", "./sources/build/plugins.json"], ->
-		sequence 'css_bootstrap', 'css_plugins', 'copy', 'css_front', 'reload'
+		sequence 'css_bootstrap', 'css_plugins', 'css_front', 'reload'
 	
 	gulp.watch ["./sources/build/gulpfile.coffee"], ->
 		sequence 'js_plugins', 'js_front', 'reload', 'css_bootstrap', 'css_plugins', 'copy', 'css_front', 'reload'
