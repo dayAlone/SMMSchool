@@ -1,7 +1,7 @@
 Template.home
 	.helpers
 		daysList: ()->
-			return Days.find({}).map (day, index, cursor)->
+			return Days.find({}).map((day, index, cursor)->
 				if moment(day.date) < moment() || Roles.userIsInRole Meteor.userId(), ['admin']
 					day.isActive = true
 					if moment(day.date) > moment()
@@ -20,52 +20,69 @@ Template.home
 
 
 				return day
+			).sort (a, b)->
+				return a.sort - b.sort
 
 Template.adminAnswers
-	.helpers 
+	.helpers
 		answersList: ()->
 			if Roles.userIsInRole Meteor.userId(), ['admin']
-				return Answers.find({dayId : @Day._id }).map (answer, index, cursor)->
-					
-					answer.result = Results.findOne
-						dayId    : answer.dayId
-						userId   : answer.userId
-						authorId : Meteor.userId()
+				users = Meteor.users.find(
+					createdAt:
+						$gte: new Date(2015,0,1)
+					).map((el) ->
+						return el._id
+					)
+				return Answers.find(
+						dayId : @Day._id
+						userId :
+							$in: users
+						).map (answer, index, cursor)->
 
-					answer.comments = Results.find(
-						dayId    : answer.dayId
-						userId   : answer.userId
-						authorId : { $ne: Meteor.userId() }
-					).fetch()
+						answer.result = Results.findOne
+							dayId    : answer.dayId
+							userId   : answer.userId
+							authorId : Meteor.userId()
 
-					data = []
-					if (typeof answer.data == 'string' || answer.data instanceof String)
-						answer.data = JSON.parse(answer.data)
+						answer.comments = Results.find(
+							dayId    : answer.dayId
+							userId   : answer.userId
+							authorId : { $ne: Meteor.userId() }
+						).fetch()
 
-					$.each answer.data, ()->
-						data.push this
-					
-					answer.data = data
+						data = []
+						if (typeof answer.data == 'string' || answer.data instanceof String)
+							answer.data = JSON.parse(answer.data)
 
-					if index == 0
-						answer.first = true
+						$.each answer.data, ()->
+							data.push this
 
-					author = Meteor.users.findOne(_id : answer.userId)
-					if author
-						answer.name = author.profile.name
-					
-					return answer
+						answer.data = data
+
+						if index == 0
+							answer.first = true
+
+						author = Meteor.users.findOne(_id : answer.userId)
+						if author
+							answer.name = ""
+							if author.profile.name
+								answer.name += author.profile.name
+							if author.profile.email
+								answer.name += " <small>(" + author.profile.email + ")</small>"
+							if author.emails && author.emails[0]
+								answer.name += " <small>(" + author.emails[0].address + ")</small>"
+						return answer
 
 Template.dayDetail
 	.helpers
 		dayLoaded: ()->
 			return Session.get 'dayLoaded'
-		getAnswer: ()->			
+		getAnswer: ()->
 			answer = Answers.findOne
 				dayId  : @Day._id
 				userId : Meteor.userId()
 			,
-				reactive:false 
+				reactive:false
 			if answer
 				if typeof answer.data == 'string'
 					answer.data = JSON.parse(answer.data)
@@ -84,19 +101,19 @@ Template.dayDetail.rendered =  ()->
 			$(this).find('span').toggleClass 'hidden'
 			e.preventDefault()
 
-Template.dayDetail.events = 
+Template.dayDetail.events =
 	'click input[type=button]' : (e, x, y)->
 		parent = $(e.target).parents('.answer')
 		textarea = parent.find 'textarea'
-		
+
 		if textarea.val().length == 0
 			textarea.focus()
 		else
-			data = 
+			data =
 				day     : $('.day').data 'id'
 				user    : parent.data 'id'
 				text    : textarea.val()
 
 		Meteor.call('resultUpdate', data)
-		
+
 		e.preventDefault()

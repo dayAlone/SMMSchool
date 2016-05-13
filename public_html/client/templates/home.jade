@@ -31,6 +31,8 @@ template(name="dayItem")
 				.days__description {{description}}
 				if isAnswer
 					.badge.badge--answer Есть ответ преподавателя
+				if noAnswer
+					.badge Самостоятельная работа
 
 template(name="dayDetail")
 	if Day
@@ -114,7 +116,7 @@ template(name="dayDetail")
 
 template(name="answersTabs")
 	li(role="presentation", class="{{#if first}}active{{/if}}")
-		a(href="#{{userId}}", aria-controls="profile", role="tab", data-toggle="tab") {{name}}
+		a(href="#{{userId}}", aria-controls="profile", role="tab", data-toggle="tab") {{{name}}}
 
 template(name="answersField")
 	if value

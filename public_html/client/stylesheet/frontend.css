@@ -3651,6 +3651,29 @@ a:hover {
   src: url("/fonts/RegalBold.ttf");
   font-weight: bold;
 }
+@font-face {
+  font-family: 'CirceWeb-Bold';
+  src: url("/fonts/bold.woff") format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'CirceWeb-Light';
+  src: url("/fonts/regular.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CirceWeb-Regular';
+  src: url("/fonts/light.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CirceWeb-ExtraBold';
+  src: url("/fonts/extra-bold.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
 body {
   background: #f6f6f4;
   font-family: 'Regal', serif;
@@ -3693,7 +3716,8 @@ body {
 .login #login-buttons-vk {
   background: #426489;
 }
-.login .login-text-and-button {
+.login .login-text-and-button,
+.login .login-button-form-submit {
   cursor: pointer;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -3706,6 +3730,28 @@ body {
   line-height: 35px;
   margin: 2px 0;
   background: #4057ac;
+}
+.login .additional-link-container a {
+  font-size: 12px;
+}
+.login .or {
+  padding: 10px 0;
+}
+.login .login-password-form label {
+  width: 35%;
+  float: left;
+  height: 35px;
+  margin-bottom: 0px;
+  line-height: 35px;
+}
+.login .login-password-form input {
+  width: 65%;
+  float: right;
+  height: 35px;
+}
+.login .login-password-form input,
+.login .login-password-form label {
+  margin-bottom: 10px;
 }
 .course-title {
   float: left;

@@ -68,6 +68,9 @@
    "jquery":{
       "js":"/jquery/dist/jquery.js"
    },
+   "likes":{
+      
+      },
    "mask":{
       "js":"/jQuery-Mask-Plugin/jquery.mask.js"
    },

@@ -19,7 +19,6 @@ Meteor.methods
 				dayId    : day._id
 
 			if !result
-
 				result = 
 					authorId    : Meteor.userId()
 					authorName  : Meteor.user().profile.name

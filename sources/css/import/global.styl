@@ -18,6 +18,29 @@
 	src url("/fonts/RegalBold.ttf")
 	font-weight bold
 
+@font-face
+	font-family 'CirceWeb-Bold'
+	src url("/fonts/bold.woff") format('woff')
+	font-weight bold
+
+@font-face
+	font-family: 'CirceWeb-Light'
+	src: url("/fonts/regular.woff") format('woff')
+	font-weight: bold
+	font-style: normal
+
+@font-face
+	font-family: 'CirceWeb-Regular'
+	src: url("/fonts/light.woff") format('woff')
+	font-weight: bold
+	font-style: normal
+
+@font-face
+	font-family: 'CirceWeb-ExtraBold'
+	src: url("/fonts/extra-bold.woff") format('woff')
+	font-weight: bold
+	font-style: normal
+
 
 blue = #4057ac
 gray = #f6f6f4
@@ -86,7 +109,7 @@ body
 		background #1eb3e9
 	#login-buttons-vk
 		background #426489
-	.login-text-and-button
+	.login-text-and-button, .login-button-form-submit
 		cursor pointer
 		border-radius 3px
 		width 30%
@@ -98,7 +121,24 @@ body
 		line-height 35px
 		margin 2px 0
 		background blue
-		
+	.additional-link-container
+		a
+			font-size 12px
+	.or
+		padding 10px 0
+	.login-password-form
+		label
+			width 35%
+			float left
+			height 35px
+			margin-bottom 0px
+			line-height 35px
+		input
+			width 65%
+			float right
+			height 35px
+		input, label
+			margin-bottom 10px
 .course-title
 	full-width()
 	margin-top -25px
@@ -148,6 +188,7 @@ body
 		text-transform: uppercase
 		&--answer
 			background #518e29
+		
 	&__name
 		font-size 26px
 		line-height 26px
@@ -177,7 +218,7 @@ body
 			display inline-block
 			max-width 60px
 			max-height 60px
-	
+
 .footer
 	full-width()
 	line-height 60px
@@ -219,7 +260,7 @@ body
 .library
 	text-align: center
 	padding 40px 0 80px
-	
+
 	full-width()
 	&__author
 		font-family 'CirceWeb-Light'

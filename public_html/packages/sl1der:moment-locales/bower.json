@@ -1,0 +1,23 @@
+{
+  "name": "meteor-moment-locales",
+  "main": "package.js",
+  "version": "0.2.8.2",
+  "authors": [
+    "Filip Wieland <filiplamparski@gmail.com>"
+  ],
+  "description": "A Meteor 0.9 package for moment.js including locales",
+  "keywords": [
+    "meteor"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.8.2"
+  }
+}

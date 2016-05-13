@@ -1,3 +1,4 @@
+Fiber       = Npm.require('fibers/future')
 Meteor.methods
 	activeUser : (invite)->
 		if @userId && invite
@@ -7,9 +8,15 @@ Meteor.methods
 			Invitations.update({_id: invite._id}, {$set: {used: true}})
 
 		return true
-   
+
 Accounts.onCreateUser (options, user)->
-	options.profile.isActive = false
+
+	if (options.profile)
+		options.profile.isActive = false
+	else
+		options.profile = {
+			isActive: false
+		}
 
 	if (user.services.vk)
 		options.profile.image = user.services.vk.photo_big
@@ -22,6 +29,6 @@ Accounts.onCreateUser (options, user)->
 
 	if (options.profile)
     	user.profile = options.profile;
-    
+
 
 	return user;

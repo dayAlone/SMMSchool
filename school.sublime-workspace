@@ -520,18 +520,74 @@
 	"buffers":
 	[
 		{
-			"file": "SMMSchool.jade",
-			"settings":
-			{
-				"buffer_size": 162,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons_single.html",
 			"settings":
 			{
 				"buffer_size": 1023,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/server/publications.coffee",
+			"settings":
+			{
+				"buffer_size": 607,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/lib/helpers.coffee",
+			"settings":
+			{
+				"buffer_size": 2148,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/lib/collections/results.coffee",
+			"settings":
+			{
+				"buffer_size": 884,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/lib/collections/courses.coffee",
+			"settings":
+			{
+				"buffer_size": 42,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/.meteor/local/build/README",
+			"settings":
+			{
+				"buffer_size": 543,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/server/data.coffee",
+			"settings":
+			{
+				"buffer_size": 1402,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/yandex-money-sdk/lib/wallet.js",
+			"settings":
+			{
+				"buffer_size": 2744,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/SMMSchool.jade",
+			"settings":
+			{
+				"buffer_size": 2572,
 				"line_ending": "Unix"
 			}
 		},
@@ -548,14 +604,6 @@
 			"settings":
 			{
 				"buffer_size": 4028,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "SMMSchool.coffee",
-			"settings":
-			{
-				"buffer_size": 328,
 				"line_ending": "Unix"
 			}
 		}
@@ -607,9 +655,19 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/slider/Documents/Projects/SMMSchool",
+		"/Users/slider/Documents/Projects/SMMSchool/node_modules",
+		"/Users/slider/Documents/Projects/SMMSchool/node_modules/yandex-money-sdk",
+		"/Users/slider/Documents/Projects/SMMSchool/node_modules/yandex-money-sdk/lib",
+		"/Users/slider/Documents/Projects/SMMSchool/public_html"
 	],
 	"file_history":
 	[
+		"/Users/slider/Documents/Projects/SMMSchool/public_html/server/fixtures.coffee",
+		"/Users/slider/Documents/Projects/SMMSchool/public_html/client/js/script.coffee",
+		"/Users/slider/Documents/Projects/SMMSchool/public_html/packages.json",
+		"/Users/slider/Documents/Projects/SMMSchool/SMMSchool.coffee",
+		"/Users/slider/Documents/Projects/SMMSchool/SMMSchool.jade",
 		"/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/package.js",
 		"/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons_dropdown.html",
 		"/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons.html",
@@ -732,12 +790,7 @@
 		"/Users/slider/Documents/Projects/ACC/HTML/public_html/tech/index.php",
 		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.list/tech/template.php",
 		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail_video/template.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail_photo/template.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail/template.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail_photo/result_modifier.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/ajax/tech/index.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.list/tech/result_modifier.php",
-		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail_video/result_modifier.php"
+		"/Users/slider/Documents/Projects/ACC/HTML/public_html/local/templates/acc/components/bitrix/news.detail/detail_photo/template.php"
 	],
 	"find":
 	{
@@ -972,143 +1025,11 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "SMMSchool.jade",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 162,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								72,
-								60
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons_single.html",
 					"semi_transient": false,
 					"settings":
@@ -1126,6 +1047,8 @@
 						],
 						"settings":
 						{
+							"bs_sintax": "html",
+							"buffer_scroll_name": "c138c680",
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1238,11 +1161,259 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public_html/server/publications.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "coffeescript",
+							"buffer_scroll_name": "7f9e528a",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "public_html/lib/helpers.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								224
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "coffeescript",
+							"buffer_scroll_name": "cdf69830",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public_html/lib/collections/results.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "coffeescript",
+							"buffer_scroll_name": "874bb201",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public_html/lib/collections/courses.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								40
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "coffeescript",
+							"buffer_scroll_name": "f32b2ace",
+							"open_with_edit": true,
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public_html/.meteor/local/build/README",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								239
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "f5b16e83",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public_html/server/data.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "coffeescript",
+							"buffer_scroll_name": "8ce75cd4",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "node_modules/yandex-money-sdk/lib/wallet.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2744,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								196
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "41b04f8b",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public_html/SMMSchool.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2271,
+								2271
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "jade",
+							"buffer_scroll_name": "db6c6968",
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons_single.js",
 					"semi_transient": false,
 					"settings":
@@ -1260,6 +1431,8 @@
 						],
 						"settings":
 						{
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "180292d8",
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1372,11 +1545,11 @@
 						"translation.y": 429.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 10,
 					"file": "/Users/slider/Documents/Projects/Packages/accounts-ui-unstyled/login_buttons.js",
 					"semi_transient": false,
 					"settings":
@@ -1394,6 +1567,8 @@
 						],
 						"settings":
 						{
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "ec367dd3",
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1506,141 +1681,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "SMMSchool.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								282,
-								282
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]

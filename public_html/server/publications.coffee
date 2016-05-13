@@ -8,7 +8,7 @@ Meteor.publish 'answers', ()->
 	if Roles.userIsInRole @userId, ['admin']
 		return Answers.find({})
 	else
-		return Answers.find({}, {userId : @userId, reactive:false })
+		return Answers.find({}, {userId : @userId })
 
 Meteor.publish 'results', ()->
 	if Roles.userIsInRole @userId, ['admin']

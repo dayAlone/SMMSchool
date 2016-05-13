@@ -8,7 +8,6 @@ UI.registerHelper '$in_array', (a, b)->
 	return inArray
 
 UI.registerHelper '$check', (a)->
-	
 	pos = 0;
 	if a
 		pos = a.indexOf( 'cdn' );
